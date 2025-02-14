@@ -11,9 +11,9 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          SERVER_IP: ${{ secrets.SERVER_IP }}
+          host: ${{ secrets.SERVER_IP }}
           username: ubuntu
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/ubuntu/fastapi-app
             git pull origin main
