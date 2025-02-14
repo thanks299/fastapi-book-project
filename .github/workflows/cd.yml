@@ -20,7 +20,7 @@ jobs:
 
     - name: Deploy application
       run: |
-        ssh ubuntu@54.237.56.245 'bash -s' << 'EOF'
+        ssh ubuntu@${{ secrets.SERVER_IP }} 'bash -s' << 'EOF'
         cd /home/ubuntu/fastapi-app
         git pull origin main
         source venv/bin/activate
